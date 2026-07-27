@@ -1,0 +1,630 @@
+{
+  "fonte": "OpenStreetMap",
+  "licenca": "ODbL — © colaboradores do OpenStreetMap",
+  "url": "https://www.openstreetmap.org/copyright",
+  "municipio": "Prado",
+  "uf": "BA",
+  "geradoEm": "2026-07-27",
+  "totais": {
+    "atracao": 14,
+    "camping": 3,
+    "gastronomia": 13,
+    "hospedagem": 24,
+    "parque": 7,
+    "praia": 14,
+    "servico": 1
+  },
+  "lugares": [
+    {
+      "id": "atracao:corumbau",
+      "nome": "Corumbau",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -16.896975,
+      "lng": -39.114478
+    },
+    {
+      "id": "atracao:falesias-areias-branca",
+      "nome": "Falésias Areias Branca",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.284157,
+      "lng": -39.221663
+    },
+    {
+      "id": "atracao:ponta-do-imbacuaba",
+      "nome": "Ponta do Imbaçuaba",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.059212,
+      "lng": -39.169793
+    },
+    {
+      "id": "atracao:praia-amendoeira",
+      "nome": "Praia Amendoeira",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.275907,
+      "lng": -39.219649
+    },
+    {
+      "id": "atracao:praia-dois-irmaos",
+      "nome": "Praia Dois Irmãos",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.129156,
+      "lng": -39.199214
+    },
+    {
+      "id": "atracao:praia-novo-prado",
+      "nome": "Praia Novo Prado",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.338195,
+      "lng": -39.217157
+    },
+    {
+      "id": "atracao:praia-da-areia-preta",
+      "nome": "Praia da Areia Preta",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.12298,
+      "lng": -39.192539
+    },
+    {
+      "id": "atracao:praia-da-lagoa-grande",
+      "nome": "Praia da Lagoa Grande",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.307396,
+      "lng": -39.220798
+    },
+    {
+      "id": "atracao:praia-da-paixao",
+      "nome": "Praia da Paixão",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.253543,
+      "lng": -39.216851
+    },
+    {
+      "id": "atracao:praia-da-represa",
+      "nome": "Praia da Represa",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.119083,
+      "lng": -39.186439
+    },
+    {
+      "id": "atracao:praia-das-ostras",
+      "nome": "Praia das Ostras",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.225415,
+      "lng": -39.214573
+    },
+    {
+      "id": "atracao:praia-de-japara-grande",
+      "nome": "Praia de Japara Grande",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.170455,
+      "lng": -39.213223
+    },
+    {
+      "id": "atracao:praia-de-japara-mirim",
+      "nome": "Praia de Japara Mirim",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.159526,
+      "lng": -39.211511
+    },
+    {
+      "id": "atracao:praia-do-tororao",
+      "nome": "Praia do Tororão",
+      "categoria": "atracao",
+      "tipo": "Atração",
+      "lat": -17.238092,
+      "lng": -39.212999
+    },
+    {
+      "id": "camping:camping-pousada-adleia-da-lua",
+      "nome": "Camping Pousada Adleia da Lua",
+      "categoria": "camping",
+      "tipo": "Camping",
+      "lat": -17.10349,
+      "lng": -39.181179
+    },
+    {
+      "id": "camping:camping-o-xatiba",
+      "nome": "Camping Ô Xatiba",
+      "categoria": "camping",
+      "tipo": "Camping",
+      "lat": -17.110661,
+      "lng": -39.182828,
+      "site": "https://www.facebook.com/Camping-Ô-Xatiba-149193278772122/?ref=ts&fref=ts"
+    },
+    {
+      "id": "camping:hospedaria-camping",
+      "nome": "Hospedaria Camping",
+      "categoria": "camping",
+      "tipo": "Camping",
+      "lat": -17.119562,
+      "lng": -39.187001
+    },
+    {
+      "id": "gastronomia:barraca-nativa",
+      "nome": "Barraca Nativa",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -16.897906,
+      "lng": -39.115533
+    },
+    {
+      "id": "gastronomia:creperia-pizzaria",
+      "nome": "Creperia & Pizzaria",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.10992,
+      "lng": -39.182623
+    },
+    {
+      "id": "gastronomia:dero-fara",
+      "nome": "Deró Fará",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.105121,
+      "lng": -39.192957
+    },
+    {
+      "id": "gastronomia:gelato-cafe",
+      "nome": "Gelato Café",
+      "categoria": "gastronomia",
+      "tipo": "Café",
+      "lat": -17.109371,
+      "lng": -39.182631
+    },
+    {
+      "id": "gastronomia:hermes",
+      "nome": "Hermes",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.109451,
+      "lng": -39.181776
+    },
+    {
+      "id": "gastronomia:noronha-pizzaria",
+      "nome": "Noronha Pizzaria",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.416954,
+      "lng": -39.204438
+    },
+    {
+      "id": "gastronomia:peixin",
+      "nome": "Peixin",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.109862,
+      "lng": -39.18285
+    },
+    {
+      "id": "gastronomia:petisco-da-villa",
+      "nome": "Petisco da Villa",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.106692,
+      "lng": -39.182022
+    },
+    {
+      "id": "gastronomia:porto-belo",
+      "nome": "Porto Belo",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.106786,
+      "lng": -39.181357
+    },
+    {
+      "id": "gastronomia:restaurante-ema",
+      "nome": "Restaurante Ema",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.112036,
+      "lng": -39.183649
+    },
+    {
+      "id": "gastronomia:restaurante-estilo-mineiro",
+      "nome": "Restaurante Estilo Mineiro",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.107884,
+      "lng": -39.182759
+    },
+    {
+      "id": "gastronomia:restaurante-da-rosa",
+      "nome": "Restaurante da Rosa",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.116826,
+      "lng": -39.186112
+    },
+    {
+      "id": "gastronomia:restaurante-do-suico",
+      "nome": "Restaurante do Suíço",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "lat": -17.079257,
+      "lng": -39.18076
+    },
+    {
+      "id": "hospedagem:condominio-jorge-amado",
+      "nome": "Condomínio Jorge Amado",
+      "categoria": "hospedagem",
+      "tipo": "Apartamento",
+      "lat": -17.415744,
+      "lng": -39.202786
+    },
+    {
+      "id": "hospedagem:hospedaria-caribe",
+      "nome": "Hospedaria Caribe",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.113552,
+      "lng": -39.188543
+    },
+    {
+      "id": "hospedagem:hospedaria-cumuruxatiba",
+      "nome": "Hospedaria Cumuruxatiba",
+      "categoria": "hospedagem",
+      "tipo": "Hostel",
+      "lat": -17.119456,
+      "lng": -39.186958
+    },
+    {
+      "id": "hospedagem:hotel-cumuruxatiba",
+      "nome": "Hotel Cumuruxatiba",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.109193,
+      "lng": -39.182373
+    },
+    {
+      "id": "hospedagem:hotel-mirante",
+      "nome": "Hotel Mirante",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.412803,
+      "lng": -39.20478
+    },
+    {
+      "id": "hospedagem:hotel-praia-da-paixao",
+      "nome": "Hotel Praia da Paixão",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.249378,
+      "lng": -39.21729
+    },
+    {
+      "id": "hospedagem:jocotoka-village",
+      "nome": "Jocotoka Village",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -16.898773,
+      "lng": -39.117937,
+      "site": "http://www.jocotoka.com.br/"
+    },
+    {
+      "id": "hospedagem:loin-de-tout",
+      "nome": "Loin de Tout",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -16.897235,
+      "lng": -39.115089
+    },
+    {
+      "id": "hospedagem:pousada-axe",
+      "nome": "Pousada Axé",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.107389,
+      "lng": -39.181972
+    },
+    {
+      "id": "hospedagem:pousada-bella-cumuru",
+      "nome": "Pousada Bella Cumuru",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.111039,
+      "lng": -39.183202
+    },
+    {
+      "id": "hospedagem:pousada-boa-sorte",
+      "nome": "Pousada Boa Sorte",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.118769,
+      "lng": -39.186666
+    },
+    {
+      "id": "hospedagem:pousada-clara",
+      "nome": "Pousada Clara",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.111393,
+      "lng": -39.183315
+    },
+    {
+      "id": "hospedagem:pousada-labella-monique",
+      "nome": "Pousada Labella Monique",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.422592,
+      "lng": -39.204907
+    },
+    {
+      "id": "hospedagem:pousada-luhana",
+      "nome": "Pousada Luhana",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.115534,
+      "lng": -39.186538
+    },
+    {
+      "id": "hospedagem:pousada-mar-azul",
+      "nome": "Pousada Mar Azul",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.444467,
+      "lng": -39.192785
+    },
+    {
+      "id": "hospedagem:pousada-mare",
+      "nome": "Pousada Maré",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.079039,
+      "lng": -39.180897
+    },
+    {
+      "id": "hospedagem:pousada-portal-do-prado",
+      "nome": "Pousada Portal do Prado",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.33982,
+      "lng": -39.226948
+    },
+    {
+      "id": "hospedagem:pousada-recanto-do-prado",
+      "nome": "Pousada Recanto do Prado",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.337765,
+      "lng": -39.222073
+    },
+    {
+      "id": "hospedagem:pousada-sol-de-verao",
+      "nome": "Pousada Sol de Verão",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.107986,
+      "lng": -39.182272
+    },
+    {
+      "id": "hospedagem:pousada-sao-francisco",
+      "nome": "Pousada São Francisco",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -16.904959,
+      "lng": -39.125989
+    },
+    {
+      "id": "hospedagem:pousada-uai-brasil",
+      "nome": "Pousada Uai Brasil",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -17.08571,
+      "lng": -39.180656,
+      "site": "https://pousadauaibrasil.com.br/"
+    },
+    {
+      "id": "hospedagem:pousada-urupe",
+      "nome": "Pousada Urupê",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.094323,
+      "lng": -39.179719
+    },
+    {
+      "id": "hospedagem:tauana-hotel",
+      "nome": "Tauana Hotel",
+      "categoria": "hospedagem",
+      "tipo": "Hotel",
+      "lat": -16.961054,
+      "lng": -39.156515
+    },
+    {
+      "id": "hospedagem:villa-cumuru-pousada",
+      "nome": "Villa Cumuru Pousada",
+      "categoria": "hospedagem",
+      "tipo": "Pousada",
+      "lat": -17.108306,
+      "lng": -39.182171
+    },
+    {
+      "id": "parque:praca-prefeito-nestor-j-ferreira",
+      "nome": "Praça Prefeito Nestor J Ferreira",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.342663,
+      "lng": -39.224703
+    },
+    {
+      "id": "parque:praca-segundo-centenario",
+      "nome": "Praça Segundo Centenário",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.340534,
+      "lng": -39.221482
+    },
+    {
+      "id": "parque:praca-sete-de-setembro",
+      "nome": "Praça Sete de Setembro",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.344072,
+      "lng": -39.219894
+    },
+    {
+      "id": "parque:praca-da-independencia",
+      "nome": "Praça da Independência",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.344755,
+      "lng": -39.219008
+    },
+    {
+      "id": "parque:praca-da-matriz",
+      "nome": "Praça da Matriz",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.343265,
+      "lng": -39.218868
+    },
+    {
+      "id": "parque:praca-de-alimentacao",
+      "nome": "Praça de Alimentação",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.342845,
+      "lng": -39.220271
+    },
+    {
+      "id": "parque:praca-do-centro",
+      "nome": "Praça do Centro",
+      "categoria": "parque",
+      "tipo": "Parque",
+      "lat": -17.110644,
+      "lng": -39.183061
+    },
+    {
+      "id": "praia:praia-lagoa-pequena",
+      "nome": "Praia Lagoa Pequena",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.321695,
+      "lng": -39.219302
+    },
+    {
+      "id": "praia:praia-mestre-charles",
+      "nome": "Praia Mestre Charles",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.213962,
+      "lng": -39.214529
+    },
+    {
+      "id": "praia:praia-taua",
+      "nome": "Praia Tauá",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -16.992342,
+      "lng": -39.162599
+    },
+    {
+      "id": "praia:praia-do-calambriao",
+      "nome": "Praia do Calambrião",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.020154,
+      "lng": -39.172491
+    },
+    {
+      "id": "praia:praia-do-centro",
+      "nome": "Praia do Centro",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.11604,
+      "lng": -39.18442
+    },
+    {
+      "id": "praia:praia-do-corumbau",
+      "nome": "Praia do Corumbau",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -16.934321,
+      "lng": -39.147068
+    },
+    {
+      "id": "praia:praia-do-farol",
+      "nome": "Praia do Farol",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.288983,
+      "lng": -39.221244
+    },
+    {
+      "id": "praia:praia-do-imbacuaba",
+      "nome": "Praia do Imbaçuaba",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.03945,
+      "lng": -39.173183
+    },
+    {
+      "id": "praia:praia-do-moreira",
+      "nome": "Praia do Moreira",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.060818,
+      "lng": -39.170752
+    },
+    {
+      "id": "praia:praia-do-pier",
+      "nome": "Praia do Pier",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.10532,
+      "lng": -39.180939
+    },
+    {
+      "id": "praia:praia-do-rio-peixe-grande",
+      "nome": "Praia do Rio Peixe Grande",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.081244,
+      "lng": -39.178846
+    },
+    {
+      "id": "praia:praia-do-rio-do-peixe",
+      "nome": "Praia do Rio do Peixe",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.093802,
+      "lng": -39.179296
+    },
+    {
+      "id": "praia:praia-do-veleiro",
+      "nome": "Praia do Veleiro",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -16.973225,
+      "lng": -39.154777
+    },
+    {
+      "id": "praia:praia-do-vicosa",
+      "nome": "Praia do Viçosa",
+      "categoria": "praia",
+      "tipo": "Praia",
+      "lat": -17.279879,
+      "lng": -39.220637
+    },
+    {
+      "id": "servico:palacio-do-turismo",
+      "nome": "Palácio do Turismo",
+      "categoria": "servico",
+      "tipo": "Informação turística",
+      "lat": -17.341617,
+      "lng": -39.224146
+    }
+  ]
+}

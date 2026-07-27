@@ -1,26 +1,379 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   VISITE PRADO — SISTEMA DE DESIGN
+   Paleta tirada da paisagem real: falésia (terracota), mar
+   (verde-azulado profundo), areia (papel quente) e sol (bronze).
+   Tema claro. Sem gradiente roxo, sem glassmorphism, sem neon.
+   ============================================================ */
+
+@theme {
+  /* Superfícies */
+  --color-areia: #fbf6ec;
+  --color-areia-2: #f4ebdb;
+  --color-areia-3: #e9dcc6;
+
+  /* Tinta */
+  --color-tinta: #16262b;
+  --color-tinta-2: #3d5158;
+  --color-tinta-3: #6b8189;
+
+  /* Acentos */
+  --color-falesia: #c0562c;
+  --color-falesia-esc: #9c4322;
+  --color-mar: #0b6e6b;
+  --color-mar-esc: #075150;
+  --color-mar-claro: #e0efec;
+  --color-ouro: #b8862f;
+
+  /* Tipografia */
+  --font-display: var(--fonte-display), Georgia, "Times New Roman", serif;
+  --font-sans: var(--fonte-corpo), system-ui, -apple-system, sans-serif;
+
+  /* Escala fluida — razão ~1.25 */
+  --text-display: clamp(2.9rem, 7.5vw, 5.75rem);
+  --text-t1: clamp(2rem, 4.2vw, 3.25rem);
+  --text-t2: clamp(1.5rem, 2.6vw, 2.1rem);
+  --text-t3: clamp(1.15rem, 1.6vw, 1.4rem);
+  --text-corpo: clamp(1.0625rem, 1.05vw, 1.1875rem);
+
+  /* Ritmo */
+  --raio: 4px;
+  --raio-md: 8px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ---------- Base ---------- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-areia);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  font-size: var(--text-corpo);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grão sutil — dá textura de papel e afasta do "flat template" */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background-color: var(--color-falesia);
+  color: var(--color-areia);
+}
+
+/* ---------- Tipografia ---------- */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.028em;
+}
+
+.t1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-t1);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+}
+
+.t2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-t2);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.t3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-t3);
+  line-height: 1.25;
+}
+
+/* Olho / eyebrow — versalete com traço */
+.olho {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--color-falesia);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.olho::before {
+  content: "";
+  width: 1.85rem;
+  height: 1px;
+  background-color: currentColor;
+  flex: none;
+}
+
+/* Variante para fundo escuro (hero cinematográfico).
+   Vem depois de .olho de propósito: mesma especificidade, ordem decide. */
+.olho-claro {
+  color: var(--color-areia-2);
+}
+
+/* Medida de leitura confortável: 60–75 caracteres */
+.medida {
+  max-width: 63ch;
+}
+
+.medida-curta {
+  max-width: 48ch;
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  padding: 0.95rem 1.85rem;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out,
+    border-color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.btn-primario {
+  background-color: var(--color-falesia);
+  color: var(--color-areia);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-falesia-esc);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-tinta);
+  border-color: color-mix(in srgb, var(--color-tinta) 26%, transparent);
+}
+
+.btn-secundario:hover {
+  border-color: var(--color-tinta);
+  background-color: color-mix(in srgb, var(--color-tinta) 5%, transparent);
+}
+
+.btn-claro {
+  background-color: var(--color-areia);
+  color: var(--color-tinta);
+}
+
+.btn-claro:hover {
+  background-color: #fff;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Foco visível (acessibilidade) ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-mar);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Link editorial ---------- */
+
+.link-sub {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease-out;
+  padding-bottom: 2px;
+}
+
+.link-sub:hover {
+  background-size: 100% 1px;
+}
+
+/* ---------- Cartão ---------- */
+
+.cartao {
+  background-color: var(--color-areia);
+  border: 1px solid var(--color-areia-3);
+  border-radius: var(--raio-md);
+  transition: border-color 0.22s ease-out, transform 0.22s ease-out,
+    box-shadow 0.22s ease-out;
+}
+
+.cartao:hover {
+  border-color: color-mix(in srgb, var(--color-falesia) 45%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -20px rgba(22, 38, 43, 0.4);
+}
+
+/* ---------- Regra fina ---------- */
+
+.regra {
+  height: 1px;
+  background-color: var(--color-areia-3);
+  border: 0;
+}
+
+/* ---------- Revelação em scroll ---------- */
+
+/* Sem `will-change: transform` de propósito: ele cria um containing block
+   e quebraria o `position: fixed` do player de vídeo aninhado. */
+.revelar {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Vídeo ---------- */
+
+.moldura-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-mar-esc);
+  border-radius: var(--raio-md);
+}
+
+.moldura-video iframe,
+.moldura-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.proporcao-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.proporcao-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+/* Vídeo de fundo do hero — cobre a área inteira sem distorcer */
+.video-capa iframe {
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100%;
+  min-width: 177.77vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  inset: auto;
+  pointer-events: none;
+}
+
+/* ---------- Mapa (Leaflet) no tema claro ---------- */
+
+.leaflet-container {
+  background: var(--color-areia-2);
+  font-family: var(--font-sans);
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--color-areia);
+  color: var(--color-tinta);
+  border: 1px solid var(--color-areia-3);
+  border-radius: var(--raio-md);
+  box-shadow: 0 12px 30px -16px rgba(22, 38, 43, 0.5);
+}
+
+.leaflet-popup-tip {
+  background: var(--color-areia);
+  border: 1px solid var(--color-areia-3);
+}
+
+.leaflet-popup-content {
+  margin: 0.9rem 1rem;
+  line-height: 1.5;
+}
+
+.leaflet-popup-content a {
+  color: var(--color-mar);
+}
+
+.leaflet-bar a {
+  background: var(--color-areia);
+  color: var(--color-tinta);
+  border-bottom-color: var(--color-areia-3);
+}
+
+.leaflet-bar a:hover {
+  background: var(--color-areia-2);
+}
+
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-areia) 88%, transparent);
+  color: var(--color-tinta-3);
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-tinta-2);
+}
+
+/* ---------- Acessibilidade de movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
 }

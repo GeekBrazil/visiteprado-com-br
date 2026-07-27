@@ -1,0 +1,47 @@
+{
+  "fonte": "Cadastur — Ministério do Turismo",
+  "url": "https://dados.turismo.gov.br",
+  "municipio": "Prado",
+  "uf": "BA",
+  "codigoIbge": "2925501",
+  "geradoEm": "2026-07-27",
+  "categorias": {
+    "hospedagem": {
+      "total": 37,
+      "situacoes": {
+        "Regular": 37
+      },
+      "tipos": {
+        "Pousada": 30,
+        "Hotel": 6,
+        "Cama e Café": 1
+      },
+      "leitos": 1763,
+      "unidadesHabitacionais": 615,
+      "leitosAcessiveis": 70,
+      "uhsAcessiveis": 22,
+      "referencia": "Segundo Trimestre de 2026"
+    },
+    "agencias": {
+      "total": 7,
+      "situacoes": {
+        "Regular": 7
+      },
+      "referencia": "Segundo Trimestre 2026"
+    },
+    "transportadoras": {
+      "total": 3,
+      "situacoes": {
+        "Regular": 3
+      },
+      "referencia": "Segundo Trimestre 2026"
+    },
+    "guias": {
+      "total": 3,
+      "situacoes": {
+        "Regular": 3
+      },
+      "referencia": "Segundo Trimestre 2026"
+    }
+  }
+}

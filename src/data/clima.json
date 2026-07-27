@@ -1,0 +1,107 @@
+{
+  "fonte": "Open-Meteo (reanálise ERA5)",
+  "url": "https://open-meteo.com",
+  "local": "Prado, BA",
+  "latitude": -17.3411,
+  "longitude": -39.2214,
+  "periodo": "2015–2025",
+  "geradoEm": "2026-07-27",
+  "meses": [
+    {
+      "mes": 1,
+      "nome": "janeiro",
+      "tempMax": 28.9,
+      "tempMin": 24.2,
+      "chuvaMm": 102,
+      "diasComChuva": 16
+    },
+    {
+      "mes": 2,
+      "nome": "fevereiro",
+      "tempMax": 29.3,
+      "tempMin": 24.4,
+      "chuvaMm": 72,
+      "diasComChuva": 14
+    },
+    {
+      "mes": 3,
+      "nome": "março",
+      "tempMax": 29.4,
+      "tempMin": 24.0,
+      "chuvaMm": 90,
+      "diasComChuva": 17
+    },
+    {
+      "mes": 4,
+      "nome": "abril",
+      "tempMax": 28.4,
+      "tempMin": 23.2,
+      "chuvaMm": 132,
+      "diasComChuva": 19
+    },
+    {
+      "mes": 5,
+      "nome": "maio",
+      "tempMax": 27.1,
+      "tempMin": 21.9,
+      "chuvaMm": 114,
+      "diasComChuva": 17
+    },
+    {
+      "mes": 6,
+      "nome": "junho",
+      "tempMax": 26.0,
+      "tempMin": 20.9,
+      "chuvaMm": 78,
+      "diasComChuva": 16
+    },
+    {
+      "mes": 7,
+      "nome": "julho",
+      "tempMax": 25.3,
+      "tempMin": 20.2,
+      "chuvaMm": 61,
+      "diasComChuva": 16
+    },
+    {
+      "mes": 8,
+      "nome": "agosto",
+      "tempMax": 25.3,
+      "tempMin": 20.5,
+      "chuvaMm": 67,
+      "diasComChuva": 16
+    },
+    {
+      "mes": 9,
+      "nome": "setembro",
+      "tempMax": 26.3,
+      "tempMin": 21.8,
+      "chuvaMm": 65,
+      "diasComChuva": 13
+    },
+    {
+      "mes": 10,
+      "nome": "outubro",
+      "tempMax": 27.1,
+      "tempMin": 22.9,
+      "chuvaMm": 113,
+      "diasComChuva": 18
+    },
+    {
+      "mes": 11,
+      "nome": "novembro",
+      "tempMax": 27.5,
+      "tempMin": 23.0,
+      "chuvaMm": 172,
+      "diasComChuva": 17
+    },
+    {
+      "mes": 12,
+      "nome": "dezembro",
+      "tempMax": 28.3,
+      "tempMin": 23.8,
+      "chuvaMm": 159,
+      "diasComChuva": 16
+    }
+  ]
+}
