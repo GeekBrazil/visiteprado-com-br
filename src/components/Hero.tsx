@@ -1,11 +1,17 @@
-import { VIDEO_CAPA, TEM_CAPA, urlEmbed } from "@/data/midia";
+import dynamic from "next/dynamic";
+import { VIDEO_CAPA, TEM_CAPA, TEM_SCRUB, urlEmbed } from "@/data/midia";
+
+// Só entra no bundle quando há vídeo de scroll configurado.
+const HeroScrub = dynamic(() => import("@/components/HeroScrub"));
 
 /**
- * Dois estados, um só layout:
- *  - sem VIDEO_CAPA -> capa editorial sobre papel de areia
- *  - com VIDEO_CAPA -> capa cinematográfica, vídeo rodando ao fundo
+ * Três estados, mesma mensagem:
+ *  - VIDEO_SCRUB  -> vídeo avança conforme a página rola (tem prioridade)
+ *  - VIDEO_CAPA   -> capa cinematográfica com vídeo de fundo do YouTube
+ *  - nenhum dos dois -> capa editorial sobre papel de areia
  */
 export default function Hero() {
+  if (TEM_SCRUB) return <HeroScrub />;
   return TEM_CAPA ? <HeroCinema /> : <HeroEditorial />;
 }
 
