@@ -4,6 +4,12 @@ import { useState } from "react";
 
 type Estado = "parado" | "enviando" | "ok" | "erro";
 
+/* A lista de inscritos mora no allancandido.com, que já tem a credencial de
+ * escrita no repositório privado. Assim o GITHUB_TOKEN existe em um lugar só,
+ * em vez de ser replicado a cada site novo. O campo `origem` mantém as listas
+ * separáveis. Este site é público — nada de segredo aqui. */
+const ENDPOINT = "https://allancandido.com/api/newsletter/subscribe";
+
 export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
@@ -16,10 +22,10 @@ export default function Newsletter() {
     setMensagem("");
 
     try {
-      const res = await fetch("/api/newsletter", {
+      const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, consent }),
+        body: JSON.stringify({ email, consent, origem: "visiteprado" }),
       });
       const dados = await res.json().catch(() => ({}));
 
