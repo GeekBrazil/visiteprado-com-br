@@ -1,17 +1,26 @@
 import dynamic from "next/dynamic";
-import { VIDEO_CAPA, TEM_CAPA, TEM_SCRUB, urlEmbed } from "@/data/midia";
+import {
+  VIDEO_CAPA,
+  TEM_CAPA,
+  TEM_CAMADAS,
+  TEM_SCRUB,
+  urlEmbed,
+} from "@/data/midia";
 
-// Só entra no bundle quando há vídeo de scroll configurado.
+// Só entram no bundle quando o modo correspondente está configurado.
 const HeroScrub = dynamic(() => import("@/components/HeroScrub"));
+const HeroCamadas = dynamic(() => import("@/components/HeroCamadas"));
 
 /**
- * Três estados, mesma mensagem:
- *  - VIDEO_SCRUB  -> vídeo avança conforme a página rola (tem prioridade)
+ * Quatro estados, mesma mensagem. A ordem é a prioridade:
+ *  - VIDEO_SCRUB  -> vídeo avança conforme a página rola
+ *  - HERO_CAMADAS -> foto fatiada em 3 planos, com paralaxe (livro 3D)
  *  - VIDEO_CAPA   -> capa cinematográfica com vídeo de fundo do YouTube
- *  - nenhum dos dois -> capa editorial sobre papel de areia
+ *  - nenhum deles -> capa editorial sobre papel de areia
  */
 export default function Hero() {
   if (TEM_SCRUB) return <HeroScrub />;
+  if (TEM_CAMADAS) return <HeroCamadas />;
   return TEM_CAPA ? <HeroCinema /> : <HeroEditorial />;
 }
 

@@ -17,7 +17,10 @@
   /* Tinta */
   --color-tinta: #16262b;
   --color-tinta-2: #3d5158;
-  --color-tinta-3: #6b8189;
+  /* #6b8189 dava 3,46:1 sobre areia-2 em 12–14px e reprovava no axe; este dá
+     5,4:1 sobre areia e 4,95:1 sobre areia-2, mantendo o mesmo matiz.
+     (#5a6f77, o passo intermediário, ficava em 4,46:1 — reprovava por pouco.) */
+  --color-tinta-3: #556970;
 
   /* Acentos */
   --color-falesia: #c0562c;
@@ -116,7 +119,9 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.19em;
   text-transform: uppercase;
-  color: var(--color-falesia);
+  /* falésia-escuro, não falésia: a 11px o terracota claro dá 4,23:1 sobre o
+     papel de areia e reprova no contraste (axe/Lighthouse). Este dá 6,0:1. */
+  color: var(--color-falesia-esc);
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
@@ -308,6 +313,215 @@ select:focus-visible,
   pointer-events: none;
 }
 
+/* ---------- Hero em camadas (livro 3D) ----------
+
+   Três folhas em profundidades diferentes dentro de uma perspectiva. O JS só
+   escreve três variáveis no palco (`--p` da rolagem, `--mx`/`--my` do
+   ponteiro); toda a matemática de deslocamento é aqui.
+
+   Por camada:
+     --z    profundidade real (negativo = longe)
+     --esc  escala que compensa a perspectiva: (1400 ± z) / 1400. Sem ela o
+            fundo aparece pequeno e o primeiro plano estoura a moldura.
+     --ay   deslocamento vertical no fim da rolagem. Longe anda pouco e para
+            baixo; perto anda muito e para cima — é isso que separa os planos.
+     --ax   deriva horizontal do ponteiro (o "diorama"). Sutil de propósito.
+   ------------------------------------------------------------------------ */
+
+.livro {
+  --p: 0;
+  --mx: 0;
+  --my: 0;
+  --corte: var(--corte-base, 52%);
+  perspective: 1400px;
+  perspective-origin: 50% 42%;
+}
+
+.livro-camada {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  /* Igual ao `perspective-origin`: só assim a escala de compensação cancela a
+     ampliação da perspectiva também na POSIÇÃO, e não apenas no tamanho.
+     Fora disso, cada camada escorrega alguns pixels e a linha do corte
+     deixa de bater com o pé das letras. */
+  transform-origin: 50% 42%;
+  transform: translate3d(
+      calc(var(--mx) * var(--ax, 0px)),
+      calc(var(--p) * var(--ay, 0px) + var(--my) * var(--ay-ponteiro, 0px)),
+      var(--z, 0px)
+    )
+    scale(var(--esc, 1));
+  will-change: transform;
+}
+
+/* A folha interna anima a abertura; o wrapper cuida da profundidade. Separadas
+   para que as duas não disputem a propriedade `transform`.
+
+   A animação NÃO mexe em opacidade: aba em segundo plano, tab oculta ou
+   navegador que engasgue param as animações CSS, e um hero que só aparece
+   depois de animar é um hero em branco. Aqui, se a animação não rodar, a
+   composição já está montada — o movimento é bônus. */
+.livro-folha {
+  position: absolute;
+  inset: -2.5%; /* sangria: esconde a costura das bordas na projeção 3D */
+  animation: abrir-livro 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--atraso, 0s);
+}
+
+.livro-folha img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+@keyframes abrir-livro {
+  from {
+    transform: translateY(var(--entrada, 12px)) scale(1.012);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Camada 1 — céu e mar */
+.livro-ceu {
+  --z: -260px;
+  --esc: 1.186;
+  --ay: 96px;
+  --ax: 8px;
+  --ay-ponteiro: 6px;
+}
+
+.livro-ceu img {
+  object-position: 50% 62%;
+}
+
+/* Camada 2 — o paredão */
+.livro-meio {
+  --z: -90px;
+  --esc: 1.064;
+  --ay: 46px;
+  --ax: -14px;
+  --ay-ponteiro: -4px;
+  --atraso: 0.07s;
+  --entrada: 18px;
+}
+
+/* Véu de contraste — entre o paredão e o título */
+.livro-veu {
+  --z: -20px;
+  --esc: 1.014;
+  --ay: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 32, 38, 0.4) 0%,
+    rgba(11, 32, 38, 0.12) 38%,
+    rgba(11, 32, 38, 0.46) 76%,
+    rgba(11, 32, 38, 0) 100%
+  );
+}
+
+/* Título — mora entre o meio e a frente. A crista corta o pé das letras.
+   Sem `--z` e sem `--esc`: texto dentro de camada escalada em 3D é
+   rasterizado e depois esticado, e sai borrado. Só as imagens ganham
+   profundidade; o texto anda em 2D puro e continua nítido. */
+.livro-titulo {
+  --ay: 8px;
+  --ax: -14px;
+  inset: 0 0 auto 0;
+  height: var(--corte);
+}
+
+/* O empurrãozinho que faz a areia morder as letras em vez de tangenciá-las.
+   Pouco de propósito: recorte pequeno lê como camada; recorte grande lê como
+   texto cortado pela metade. */
+.livro-h1 {
+  transform: translateY(0.12em);
+  text-shadow: 0 10px 26px rgba(7, 30, 36, 0.28);
+}
+
+/* Base — impressa sobre a areia, na frente de tudo. Também sem escala, pelo
+   mesmo motivo do título: nitidez do texto. */
+.livro-base {
+  --ay: -46px;
+  --ax: -22px;
+  inset: var(--corte) 0 0 0;
+}
+
+/* Camada 3 — o banco de areia, o plano que corta.
+   A camada é do tamanho do palco (para a compensação de perspectiva valer),
+   mas a folha começa na linha do corte: é o topo da imagem que encosta ali.
+   Por isso o arquivo da frente precisa ter a crista na primeira linha de
+   pixels — assim o recorte cai no mesmo ponto em qualquer proporção de tela,
+   sem depender de como o `object-fit: cover` recortou a foto. */
+.livro-frente {
+  --z: 180px;
+  --esc: 0.871;
+  --ay: -70px;
+  --ax: -30px;
+  --atraso: 0.14s;
+  --entrada: 26px;
+}
+
+.livro-frente .livro-folha {
+  /* topo exato no corte; sangria só nos lados e embaixo (a camada sobe com a
+     rolagem e sem essa folga apareceria o fundo no rodapé do hero) */
+  inset: var(--corte) -2.5% -16% -2.5%;
+}
+
+.livro-frente img {
+  object-position: 50% 0;
+}
+
+/* Entrada do texto, no mesmo compasso das folhas — também sem opacidade:
+   o título é o LCP da página, não pode depender de animação para existir. */
+.livro-titulo > div {
+  --entrada: 14px;
+  animation: abrir-livro 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.16s;
+}
+
+.livro-base > div {
+  --entrada: 20px;
+  animation: abrir-livro 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.24s;
+}
+
+/* Telas pequenas: menos amplitude (senão o plano da frente engole o título)
+   e crista mais baixa, para caber o título acima dela. */
+@media (max-width: 640px) {
+  .livro {
+    /* A perspectiva NÃO muda por breakpoint: os `--esc` são calculados para
+       1400px e, com outro valor, a compensação erra e aparece o fundo nas
+       bordas da camada. Aqui só a crista sobe (mais areia para o texto da
+       base, que no celular quebra em mais linhas). */
+    --corte: calc(var(--corte-base, 52%) - 8%);
+  }
+
+  .livro-ceu {
+    --ay: 54px;
+  }
+
+  .livro-meio {
+    --ay: 26px;
+  }
+
+  .livro-frente {
+    --ay: -34px;
+  }
+
+  .livro-base {
+    --ay: -40px;
+  }
+
+  .livro-h1 {
+    text-shadow: 0 8px 22px rgba(7, 30, 36, 0.4);
+  }
+}
+
 /* ---------- Mapa (Leaflet) no tema claro ---------- */
 
 .leaflet-container {
@@ -375,5 +589,11 @@ select:focus-visible,
   .revelar {
     opacity: 1;
     transform: none;
+  }
+
+  /* O livro 3D fica montado e imóvel: a profundidade continua, o movimento não.
+     (O JS nem chega a escrever `--p`, então os deslocamentos ficam em zero.) */
+  .livro-camada {
+    will-change: auto;
   }
 }

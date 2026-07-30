@@ -82,6 +82,76 @@ export const VIDEO_SCRUB: VideoScrub | null = null;
 export const TEM_SCRUB = VIDEO_SCRUB !== null;
 
 /**
+ * Hero em camadas — o "livro 3D".
+ *
+ * Uma foto fatiada em três planos que se movem em velocidades diferentes
+ * conforme a página rola. O plano da frente passa NA FRENTE do título: a
+ * crista de areia corta o pé das letras, como numa capa de livro pop-up.
+ *
+ * COMO PREPARAR AS TRÊS CAMADAS
+ * -----------------------------
+ * 1. `ceu`     — imagem inteira, sem transparência (céu + mar + horizonte).
+ * 2. `meio`    — PNG/WebP COM canal alfa: só o paredão de falésia, o resto
+ *                transparente. É o plano do meio.
+ * 3. `frente`  — PNG/WebP COM canal alfa: só o banco de areia / primeiro
+ *                plano. Transparente acima da crista.
+ *
+ * A crista da camada `frente` precisa cair na mesma altura do `corte` abaixo,
+ * senão o recorte nas letras não fecha. Ajuste o `corte` olhando a tela.
+ *
+ * Recorte do alfa a partir de uma foto única (sem editor, no terminal):
+ *
+ *   pip install rembg[cli]
+ *   rembg i -m sam foto.jpg camada.png     # ou -m isnet-general-use
+ *
+ * Exportação (peso é orçamento de LCP — as três somadas < 400 KB):
+ *
+ *   # fundo, sem alfa: WebP com perda
+ *   ffmpeg -i ceu.jpg -vf scale=1920:-2 -q:v 78 public/hero/ceu.webp
+ *   # camadas com alfa: preserve o canal
+ *   ffmpeg -i meio.png -vf scale=1920:-2 -c:v libwebp -q:v 82 public/hero/meio.webp
+ */
+export interface HeroCamadas {
+  /** Fundo opaco (céu + mar). Caminho a partir de /public. */
+  ceu: string;
+  /** Plano do meio, com transparência (a falésia). */
+  meio: string;
+  /** Primeiro plano, com transparência (o banco de areia). Corta as letras. */
+  frente: string;
+  /**
+   * Altura da crista do primeiro plano, em porcentagem do hero.
+   * É onde o título encosta e é cortado. Padrão: 52%.
+   */
+  corte?: number;
+  /**
+   * Larguras extras disponíveis para o `srcset`, em pixels. Para cada uma,
+   * precisa existir o arquivo com o sufixo `-<largura>` antes da extensão:
+   *
+   *   larguras: [960]  ->  /hero/ceu.webp  +  /hero/ceu-960.webp
+   *
+   * Sem isso o celular baixa as três camadas em 1920px — foram ~400 KB e
+   * 4,8s de LCP no Lighthouse mobile.
+   *
+   *   magick ceu.webp -resize 960x -quality 72 ceu-960.webp
+   */
+  larguras?: number[];
+  /** Descrição da cena inteira, para leitores de tela. */
+  descricao: string;
+}
+
+export const HERO_CAMADAS: HeroCamadas | null = {
+  ceu: "/hero/ceu.webp",
+  meio: "/hero/falesia.webp",
+  frente: "/hero/banco.webp",
+  corte: 52,
+  larguras: [960],
+  descricao:
+    "Paredão de falésia de arenito alaranjado com vegetação no topo, mar aberto ao fundo e banco de areia de maré baixa em primeiro plano, no fim da tarde.",
+};
+
+export const TEM_CAMADAS = HERO_CAMADAS !== null;
+
+/**
  * Galeria de vídeos. Adicione quantos quiser.
  *
  * Exemplo preenchido:
