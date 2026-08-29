@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Estado = "parado" | "enviando" | "ok" | "erro";
 
@@ -90,7 +91,10 @@ export default function Newsletter() {
         />
         <span>
           Autorizo o envio de e-mails sobre Prado e a Costa das Baleias. Sem
-          repasse a terceiros; dá para sair a qualquer momento.
+          repasse a terceiros; dá para sair a qualquer momento (veja nossa{" "}
+          <Link href="/privacidade" className="underline text-mar hover:text-mar-esc font-medium">
+            Política de Privacidade
+          </Link>).
         </span>
       </label>
 

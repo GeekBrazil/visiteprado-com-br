@@ -319,9 +319,16 @@ function Rodape() {
 
         <hr className="regra my-10" />
 
-        <p className="text-xs text-tinta-3">
-          © {new Date().getFullYear()} visiteprado.com.br · Allan Candido
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-tinta-3">
+          <p>
+            © {new Date().getFullYear()} visiteprado.com.br · Allan Candido
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacidade" className="hover:text-mar transition-colors underline">
+              Política de Privacidade
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
