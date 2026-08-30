@@ -323,7 +323,15 @@ function Rodape() {
           <p>
             © {new Date().getFullYear()} visiteprado.com.br · Allan Candido
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <a
+              href="https://www.openstreetmap.org/copyright"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-mar transition-colors"
+            >
+              Dados cartográficos © colaboradores do OpenStreetMap
+            </a>
             <Link href="/privacidade" className="hover:text-mar transition-colors underline">
               Política de Privacidade
             </Link>
