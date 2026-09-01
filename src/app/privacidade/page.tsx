@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacidadePage() {
   return (
-    <main className="min-h-screen bg-areia text-tinta py-16 px-6 lg:px-8">
+    <main id="conteudo" className="min-h-screen bg-areia text-tinta py-16 px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"

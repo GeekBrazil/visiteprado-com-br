@@ -171,7 +171,9 @@ body::before {
 
 .btn-primario {
   background-color: var(--color-falesia);
-  color: var(--color-areia);
+  /* Branco puro, nao --color-areia: o creme sobre a falesia da 4,23:1 e
+     reprova em AA. Branco da 4,56:1 sem mexer na cor da marca. */
+  color: #ffffff;
 }
 
 .btn-primario:hover {

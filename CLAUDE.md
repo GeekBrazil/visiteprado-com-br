@@ -34,8 +34,8 @@ Paleta tirada da paisagem real, não de template:
 | `areia` | `#fbf6ec` | fundo (papel quente) |
 | `areia-2` / `areia-3` | `#f4ebdb` / `#e9dcc6` | faixas alternadas, bordas |
 | `tinta` | `#16262b` | texto principal |
-| `tinta-2` / `tinta-3` | `#3d5158` / `#6b8189` | corpo, legenda |
-| `falesia` | `#c0562c` | acento primário (a cor real do paredão) |
+| `tinta-2` / `tinta-3` | `#3d5158` / `#556970` | corpo, legenda (tinta-3 escurecido: `#6b8189` dava 3,80:1 e reprovava em AA) |
+| `falesia` | `#c0562c` | acento primário (a cor real do paredão). Texto em cima é **branco puro**, não `areia` — o creme dá 4,23:1 e reprova |
 | `mar` | `#0b6e6b` | acento secundário, foco |
 
 Textura de grão sutil no `body::before` — é o que tira o ar de "flat template".
