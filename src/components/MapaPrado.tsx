@@ -27,6 +27,9 @@ const CATEGORIAS: { id: string; rotulo: string; cor: string }[] = [
   { id: "camping", rotulo: "Camping", cor: "#4b7f52" },
   { id: "gastronomia", rotulo: "Comer", cor: "#8a5a8f" },
   { id: "parque", rotulo: "Praças e parques", cor: "#5b7a2e" },
+  // Faltava declarar: o dado tem 1 ponto em "servico" (Palacio do Turismo) e,
+  // sem a categoria aqui, o filtro o descartava — era o "75 de 76 pontos".
+  { id: "servico", rotulo: "Informação turística", cor: "#2f6d8f" },
 ];
 
 const COR: Record<string, string> = Object.fromEntries(
@@ -63,13 +66,23 @@ export default function MapaPrado() {
         scrollWheelZoom: false,
       });
 
+      // Basemap da Esri, nao CARTO: desde 2025 a CARTO exige chave e passou a
+      // estampar "API KEY REQUIRED" em diagonal em cada tile — devolvendo 200
+      // com imagem valida, entao nada aparecia como erro no console.
+      // Light Gray combina com o papel quente do site e nao pede chave.
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
         {
           attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          maxZoom: 18,
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; Esri',
+          maxZoom: 16,
         }
+      ).addTo(mapa);
+
+      // Camada separada só com os rotulos (nomes de praia, rio, municipio).
+      L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+        { attribution: "", maxZoom: 16 }
       ).addTo(mapa);
 
       L.control.zoom({ position: "bottomright" }).addTo(mapa);
