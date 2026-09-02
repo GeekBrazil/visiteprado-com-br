@@ -11,7 +11,12 @@ type Estado = "parado" | "enviando" | "ok" | "erro";
  * separáveis. Este site é público — nada de segredo aqui. */
 const ENDPOINT = "https://allancandido.com/api/newsletter/subscribe";
 
-export default function Newsletter() {
+/**
+ * `id` existe porque a captura aparece duas vezes na home — uma no pico de
+ * interesse, depois de "O que fazer", e outra no fecho. Dois campos com o
+ * mesmo id quebrariam a associacao com o <label>.
+ */
+export default function Newsletter({ id = "email" }: { id?: string }) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [estado, setEstado] = useState<Estado>("parado");
@@ -59,11 +64,11 @@ export default function Newsletter() {
   return (
     <form onSubmit={enviar} className="mt-9">
       <div className="flex flex-col gap-3 sm:flex-row">
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor={id} className="sr-only">
           Seu e-mail
         </label>
         <input
-          id="email"
+          id={id}
           type="email"
           required
           value={email}

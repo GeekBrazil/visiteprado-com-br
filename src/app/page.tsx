@@ -29,6 +29,7 @@ export default function Home() {
         {TEM_GALERIA && <Videos />}
         <Clima />
         <Experiencias />
+        <CapturaCedo />
         <NumerosOficiais />
         <Pratico />
         <Chamada />
@@ -276,6 +277,38 @@ function Pratico() {
 }
 
 /* ------------------------------------------------------------------ */
+
+/**
+ * Captura no pico de interesse.
+ *
+ * A newsletter era a UNICA conversao do site e vivia a 93% da rolagem — quem
+ * decidia ir a Prado logo depois de ler "o que fazer" nao tinha onde deixar
+ * contato sem percorrer o resto da pagina. Este bloco repete a captura ali, em
+ * formato curto; o fecho continua existindo para quem leu tudo.
+ */
+function CapturaCedo() {
+  return (
+    <section
+      aria-label="Receber novidades sobre Prado"
+      className="border-y border-areia-3 bg-areia-2"
+    >
+      <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+        <Revelar>
+          <p className="olho">Antes de fechar a aba</p>
+          <h2 className="t2 mt-4 max-w-[22ch]">
+            A temporada certa muda o que você vai ver
+          </h2>
+          <p className="medida mt-4 text-tinta-2">
+            Baleia, maré boa para Abrolhos e estrada de terra firme não
+            acontecem no mesmo mês. Deixa o e-mail que eu aviso quando a
+            janela abrir.
+          </p>
+          <Newsletter id="email-cedo" />
+        </Revelar>
+      </div>
+    </section>
+  );
+}
 
 function Chamada() {
   return (

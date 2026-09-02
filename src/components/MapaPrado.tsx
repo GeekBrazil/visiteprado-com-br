@@ -21,6 +21,9 @@ const LUGARES = lugaresJson.lugares as Lugar[];
 /** Ordem e aparência dos filtros. A cor vira o pino no mapa. */
 const CATEGORIAS: { id: string; rotulo: string; cor: string }[] = [
   { id: "praia", rotulo: "Praias", cor: "#0b6e6b" },
+  // Sem nenhum ponto no dado hoje: o chip nao renderiza (contagem zero retorna
+  // null logo abaixo). Fica declarada de proposito — a falesia e o assunto do
+  // site e a categoria ja esta pronta para quando os pontos entrarem.
   { id: "falesia", rotulo: "Falésias", cor: "#c0562c" },
   { id: "atracao", rotulo: "Atrações", cor: "#b8862f" },
   { id: "hospedagem", rotulo: "Hospedagem", cor: "#3d5158" },
