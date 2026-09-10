@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     // Miniaturas dos vídeos vêm do CDN do YouTube; deixamos o Next
     // otimizar e servir em AVIF/WebP em vez de baixar o JPG cru.
