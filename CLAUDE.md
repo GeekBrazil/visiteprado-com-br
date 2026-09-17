@@ -13,12 +13,12 @@
 | UI | React 19, TypeScript |
 | Estilo | Tailwind CSS 4 + sistema próprio em `globals.css` |
 | Tipografia | Fraunces (display, serifada) + Inter (corpo) via `next/font` |
-| Deploy | Vercel (Hobby) |
+| Deploy | Coolify/Hetzner (migrado da Vercel em 2026-09-09 — Vercel Hobby proíbe uso comercial) |
 
 ## Regras Críticas
 
 - **Nunca** adicionar `Co-Authored-By: Claude` em commits — autoria exclusiva de Allan Candido.
-- **Deploy = Git.** A Vercel builda o `origin/main`. Padrão: `npm run build` → `git commit` → **`git push origin main`**.
+- **Deploy = Coolify, não só `git push`.** App uuid `usizz6qib1kaf06euwoul8vn` no Coolify (`GeekBrazil/visiteprado-com-br`). Padrão: `npm run build` → `git commit` → `git push origin main` → disparar o deploy via API (`curl -H "Authorization: Bearer $(cat ~/.config/coolify/api_token)" "https://coolify.allancandido.com/api/v1/deploy?uuid=usizz6qib1kaf06euwoul8vn"`) — o push sozinho não builda nada aqui (diferente da Vercel de antes). **Ainda não tem `scripts/deploy.sh` próprio** (único dos 3 sites sem automação — allancandido-com e jobpago-com-br já têm); considerar criar um igual.
 - **Tema claro, sempre.** Nada de modo escuro nesta marca.
 - **Sem estética de IA**: proibido gradiente roxo, glassmorphism, emoji em heading,
   sombra neon, escassez falsa ("3 vagas restantes") e preço inventado.
