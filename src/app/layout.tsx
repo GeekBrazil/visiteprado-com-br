@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import EventoVisita from "@/components/EventoVisita";
+import DifyChatWidget from "@/components/DifyChatWidget";
 
 /* Serifada editorial no display + sans neutra no corpo.
    Combinação escolhida para afastar a página da estética de template. */
@@ -113,6 +114,7 @@ export default function RootLayout({
         </a>
         {children}
         <EventoVisita />
+        <DifyChatWidget />
       </body>
     </html>
   );
