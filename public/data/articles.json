@@ -1,0 +1,13 @@
+[
+  {
+    "id": "guia-praias-paradisiacas-prado-bahia",
+    "title": "Guia Completo das Praias de Prado (BA): Das Falésias ao Parque Nacional do Descobrimento",
+    "summary": "Descubra os 84 km de litoral intocado, recifes de corais, piscinas naturais e o charme da Costa das Baleias.",
+    "category": "Ecoturismo",
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200",
+    "publishedAt": "2026-09-18T10:00:00.000Z",
+    "status": "published",
+    "featured": true,
+    "content": "<p class=\"leading-relaxed my-3 text-amber-100/90 font-sans text-base\">Prado reúne um dos trechos litorâneos mais preservados do Brasil. Com praias emolduradas por falésias multicoloridas e águas calmas e mornas, a cidade é o refúgio perfeito para quem busca natureza exuberante e tranquilidade.</p>"
+  }
+]
