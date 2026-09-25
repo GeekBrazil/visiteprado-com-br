@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import EventoVisita from "@/components/EventoVisita";
-import DifyChatWidget from "@/components/DifyChatWidget";
+import Script from "next/script";
 
 /* Serifada editorial no display + sans neutra no corpo.
    Combinação escolhida para afastar a página da estética de template. */
@@ -114,7 +114,8 @@ export default function RootLayout({
         </a>
         {children}
         <EventoVisita />
-        <DifyChatWidget />
+        {/* chat de atendimento — widget único servido pelo allancandido.com (substitui o Dify) */}
+        <Script src="https://allancandido.com/chat/widget.js" data-site="visiteprado" strategy="lazyOnload" />
       </body>
     </html>
   );
