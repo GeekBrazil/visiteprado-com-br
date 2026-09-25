@@ -8,8 +8,8 @@ set -euo pipefail
 # (<uuid>:<sha>), vai pro VPS por docker save/load e o deploy sai com
 # force_rebuild=false — o Coolify acha a imagem e pula o build.
 #
-# O site é servido pelo Coolify no VPS (o DNS aponta para lá); o deploy antigo
-# na Vercel (scripts/deploy.sh) publicava uma cópia que ninguém acessa.
+# O site é servido pelo Coolify no VPS (o DNS aponta para lá). O projeto antigo
+# na Vercel era uma cópia órfã e foi desligado em 2026-09-25.
 #
 # NUNCA interromper no meio nem envolver em `timeout`: deploy cortado deixa
 # coolify-helper órfão no VPS.
