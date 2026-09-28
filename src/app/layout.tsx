@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import EventoVisita from "@/components/EventoVisita";
 import Script from "next/script";
 
 /* Serifada editorial no display + sans neutra no corpo.
@@ -113,7 +112,8 @@ export default function RootLayout({
           Ir para o conteúdo
         </a>
         {children}
-        <EventoVisita />
+        {/* rastreio próprio + passo de 1 toque antes do WhatsApp — arquivo único servido pelo allancandido.com */}
+        <Script src="https://allancandido.com/r.js" data-site="visiteprado" strategy="afterInteractive" />
         {/* chat de atendimento — widget único servido pelo allancandido.com (substitui o Dify) */}
         <Script src="https://allancandido.com/chat/widget.js" data-site="visiteprado" strategy="lazyOnload" />
       </body>
