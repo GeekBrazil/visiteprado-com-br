@@ -58,6 +58,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // tela cheia quando adicionado à tela de início (manifest em src/app/manifest.ts)
+  appleWebApp: { capable: true, title: "Visite Prado", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
