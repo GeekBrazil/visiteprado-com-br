@@ -203,6 +203,10 @@ function Experiencias() {
           hora e estrada de terra tem época boa — o roteiro muda conforme o mês
           em que você vem.
         </p>
+        <p className="medida mt-4 text-sm text-tinta-2">
+          Contrate passeios e saídas embarcadas apenas com guias, condutores e
+          agências com cadastro no Cadastur.
+        </p>
       </Revelar>
 
       <div className="mt-16 grid gap-6 sm:grid-cols-2">

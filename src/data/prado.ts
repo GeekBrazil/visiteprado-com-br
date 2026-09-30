@@ -25,7 +25,7 @@ export const DESTINOS: Destino[] = [
     chapeu: "O cartão-postal",
     distancia: "Centro de Prado",
     texto:
-      "O paredão de areia colorida que deu fama à cidade. As camadas vão do creme ao vermelho-tijolo e mudam de tom conforme o sol gira — no fim da tarde ficam alaranjadas. A caminhada pela base só é possível na maré baixa, o que torna a tábua de marés parte do passeio.",
+      "O paredão de areia colorida que deu fama à cidade. As camadas vão do creme ao vermelho-tijolo e mudam de tom conforme o sol gira — no fim da tarde ficam alaranjadas. A caminhada pela base só é possível na maré baixa, o que torna a tábua de marés parte do passeio. Não pare nem sente junto à base da falésia: há risco de queda de blocos. Confira a tábua de marés e volte antes de a maré subir.",
     destaques: ["Melhor luz ao entardecer", "Acesso pela maré baixa", "Caminhada de areia"],
   },
   {
@@ -52,7 +52,7 @@ export const DESTINOS: Destino[] = [
     chapeu: "Água doce na areia",
     distancia: "Sul do centro",
     texto:
-      "Uma queda d'água doce desce a falésia e corre pela areia até o mar. A combinação de cachoeira, paredão colorido e praia aberta não se repete em nenhum outro ponto da costa. Vale chegar cedo, antes do sol alto e antes de a maré cobrir o trecho de caminhada.",
+      "Uma queda d'água doce desce a falésia e corre pela areia até o mar. A combinação de cachoeira, paredão colorido e praia aberta não se repete em nenhum outro ponto da costa. Vale chegar cedo, antes do sol alto e antes de a maré cobrir o trecho de caminhada. Não pare nem sente junto à base da falésia: há risco de queda de blocos. Confira a tábua de marés e volte antes de a maré subir.",
     destaques: ["Cachoeira sobre a praia", "Ir cedo", "Paredão colorido"],
   },
 ];
@@ -76,16 +76,16 @@ export const EXPERIENCIAS: Experiencia[] = [
   },
   {
     nome: "Travessia das falésias",
-    chapeu: "Caminhada guiada",
+    chapeu: "Caminhada",
     texto:
-      "Percurso pela base do paredão colorido, ajustado à tábua de marés do dia. Dá para encaixar as piscinas naturais que se formam entre os recifes quando a água recua.",
+      "Percurso pela base do paredão colorido, ajustado à tábua de marés do dia. Dá para encaixar as piscinas naturais que se formam entre os recifes quando a água recua. Não pare nem sente junto à base da falésia: há risco de queda de blocos. Confira a tábua de marés e volte antes de a maré subir.",
     epoca: "O ano todo, conforme a maré",
   },
   {
     nome: "Corumbau e Monte Pascoal",
     chapeu: "Bate-volta",
     texto:
-      "Dia inteiro subindo o litoral até a ponta, com parada nas vilas do caminho. Transporte adequado à estrada de terra e tempo calculado para pegar a maré baixa na ponta.",
+      "Dia inteiro subindo o litoral até a ponta, com parada nas vilas do caminho. Vá com veículo adequado à estrada de terra e calcule o horário para chegar na maré baixa.",
     epoca: "Melhor na estação seca",
   },
   {

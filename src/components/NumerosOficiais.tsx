@@ -46,7 +46,7 @@ export default function NumerosOficiais() {
             <p className="medida-curta mt-5 text-tinta-2">
               Todo estabelecimento de turismo no Brasil precisa estar no
               Cadastur, o cadastro do Ministério do Turismo. Estes são os
-              registros regulares do município — não é estimativa nossa, é o
+              registros ativos do município — não é estimativa nossa, é o
               que consta na base federal.
             </p>
           </Revelar>
@@ -56,7 +56,7 @@ export default function NumerosOficiais() {
               <Numero
                 valor={nf.format(hospedagem.total)}
                 rotulo="meios de hospedagem"
-                nota="todos regulares"
+                nota="com cadastro ativo no Cadastur na data da consulta"
               />
               {hospedagem.leitos ? (
                 <Numero

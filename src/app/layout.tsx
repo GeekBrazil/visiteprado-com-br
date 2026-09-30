@@ -20,7 +20,7 @@ const corpo = Inter({
 const SITE = "https://visiteprado.com.br";
 const TITULO = "Visite Prado — praias, falésias e baleias no sul da Bahia";
 const DESCRICAO =
-  "Guia de Prado, na Costa das Baleias: as falésias coloridas, a cachoeira do Tororão, o banco de areia de Corumbau e a temporada de baleias-jubarte. Roteiros com quem conhece a região.";
+  "Guia de Prado, na Costa das Baleias: as falésias coloridas, a cachoeira do Tororão, o banco de areia de Corumbau e a temporada de baleias-jubarte. Guia independente, com informação de quem conhece a região.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
