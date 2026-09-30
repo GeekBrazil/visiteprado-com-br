@@ -37,7 +37,7 @@ export default function Newsletter({ id = "email" }: { id?: string }) {
 
       if (res.ok) {
         setEstado("ok");
-        setMensagem(dados.message ?? "Pronto. Você recebe as próximas.");
+        setMensagem(dados.confirmar ? "Falta um passo: mandamos um e-mail de confirmação. Clique no link para a inscrição valer." : (dados.message ?? "Pronto. Você recebe as próximas."));
         setEmail("");
         setConsent(false);
       } else {

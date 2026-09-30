@@ -62,7 +62,7 @@ export default function PrivacidadePage() {
             <ul className="mt-3 list-disc pl-5 space-y-1.5 text-tinta-2">
               <li><strong>Newsletter — dado coletado:</strong> endereço de e-mail, data da inscrição e o registro do consentimento.</li>
               <li><strong>Newsletter — finalidade:</strong> envio de informações sobre Prado e a Costa das Baleias — temporada de baleias-jubarte, marés, estradas de terra e dicas locais.</li>
-              <li><strong>Newsletter — base legal:</strong> consentimento (Art. 7º, I, da LGPD), dado ao marcar a caixa do formulário.</li>
+              <li><strong>Newsletter — base legal:</strong> consentimento (Art. 7º, I, da LGPD), dado ao marcar a caixa do formulário e confirmado pelo link que enviamos por e-mail: sem esse clique, nada é enviado. Todo e-mail tem um link para sair na hora.</li>
               <li><strong>Newsletter — serviço usado:</strong> a inscrição é recebida pelo servidor do allancandido.com (do mesmo mantenedor) e a lista fica guardada em repositório privado no GitHub. O envio é feito pelo próprio mantenedor.</li>
               <li><strong>Chat do site:</strong> o texto que você escreve no chat, usado só para gerar a resposta do atendimento automático. Base legal: legítimo interesse (Art. 7º, IX).</li>
               <li><strong>Estatística de uso:</strong> páginas visitadas, tempo, rolagem, cliques e origem da visita, sem cookie e sem guardar o IP. Ao tocar num botão de WhatsApp, registramos a página de origem antes de abrir a conversa. Base legal: legítimo interesse (Art. 7º, IX) em melhorar o guia.</li>
