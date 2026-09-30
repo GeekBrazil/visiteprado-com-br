@@ -12,18 +12,29 @@ const TARGETS = [
     expectedStatus: 200,
     mustContain: [
       "Prado",
-      "Bahia"
+      "Bahia",
+      "Guia independente",
+      "risco de queda de blocos",
+      "cadastro no Cadastur",
+      "com cadastro ativo no Cadastur na data da consulta"
     ],
-    mustNotContain: []
+    mustNotContain: [
+      // limpeza de escopo 2026-09-30: guia informativo, não vende passeio
+      "Roteiros com quem conhece",
+      "Caminhada guiada",
+      "todos regulares"
+    ]
   },
   {
     name: "Termos e Privacidade",
     url: "https://www.visiteprado.com.br/privacidade",
     expectedStatus: 200,
     mustContain: [
-      "Privacidade"
+      "Privacidade",
+      "consentimento",
+      "Marco Civil"
     ],
-    mustNotContain: []
+    mustNotContain: ["DEFINIR PRAZO"]
   },
   {
     name: "Blog Público & Ingestão de Artigos (/blog)",
