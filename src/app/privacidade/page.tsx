@@ -79,7 +79,7 @@ export default function PrivacidadePage() {
           <section>
             <h2 className="t3 text-tinta mb-3">4. Prazo de Retenção dos Dados</h2>
             <p>
-              O e-mail fica na lista enquanto a inscrição estiver ativa. Ao pedir o descadastro, ele sai da lista de envio na hora e é apagado em até 30 dias.
+              O e-mail fica na lista enquanto a inscrição estiver ativa. Ao pedir o descadastro, ele sai da lista de envio na hora e é apagado em até 30 dias. Registros de acesso ao site (data, hora e IP) são guardados por 6 meses, como exige o Marco Civil da Internet (Lei 12.965/2014, art. 15). Mensagens do chat e a estatística de uso ficam só enquanto servem para responder e melhorar o guia (LGPD, arts. 15 e 16).
             </p>
           </section>
 
