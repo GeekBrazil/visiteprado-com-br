@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 /* Serifada editorial no display + sans neutra no corpo.
    Combinação escolhida para afastar a página da estética de template. */
@@ -118,6 +119,7 @@ export default function RootLayout({
         <Script src="https://allancandido.com/r.js" data-site="visiteprado" strategy="afterInteractive" />
         {/* chat de atendimento — widget único servido pelo allancandido.com (substitui o Dify) */}
         <Script src="https://allancandido.com/chat/widget.js" data-site="visiteprado" strategy="lazyOnload" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-Y22K40W6RB"} />
       </body>
     </html>
   );
