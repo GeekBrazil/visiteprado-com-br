@@ -25,7 +25,7 @@ export const DESTINOS: Destino[] = [
     chapeu: "O cartão-postal",
     distancia: "Centro de Prado",
     texto:
-      "O paredão de areia colorida que deu fama à cidade. As camadas vão do creme ao vermelho-tijolo e mudam de tom conforme o sol gira — no fim da tarde ficam alaranjadas. A caminhada pela base só é possível na maré baixa, o que torna a tábua de marés parte do passeio. Não pare nem sente junto à base da falésia: há risco de queda de blocos. Confira a tábua de marés e volte antes de a maré subir.",
+      "O paredão de areia colorida que deu fama à cidade. As camadas vão do creme ao vermelho-tijolo e mudam de tom conforme o sol gira, ficando alaranjadas no fim da tarde. A caminhada pela base só é possível na maré baixa, o que torna a tábua de marés parte do passeio. Não pare nem sente junto à base da falésia: há risco de queda de blocos. Confira a tábua de marés e volte antes de a maré subir.",
     destaques: ["Melhor luz ao entardecer", "Acesso pela maré baixa", "Caminhada de areia"],
   },
   {
@@ -43,7 +43,7 @@ export const DESTINOS: Destino[] = [
     chapeu: "Banco de areia",
     distancia: "Extremo norte do município",
     texto:
-      "Na maré baixa, uma língua de areia avança mar adentro e some algumas horas depois. Em dias claros dá para ver o Monte Pascoal no horizonte — o mesmo monte avistado pela esquadra de Cabral. É um dos trechos mais preservados do litoral baiano, com acesso por estrada de terra.",
+      "Na maré baixa, uma língua de areia avança mar adentro e some algumas horas depois. Em dias claros dá para ver o Monte Pascoal no horizonte, o mesmo ponto avistado na chegada da esquadra em 1500. É um dos trechos mais preservados do litoral baiano, com acesso por estrada de terra.",
     destaques: ["Aparece só na maré baixa", "Vista do Monte Pascoal", "Acesso por estrada de terra"],
   },
   {
@@ -113,7 +113,7 @@ export const PRATICO: ItemPratico[] = [
   {
     pergunta: "Quando ir",
     resposta:
-      "De julho a novembro para ver baleias, com dias mais secos e temperatura amena. De dezembro a março para mar mais calmo e quente, ideal para mergulho e para Abrolhos — é também a alta temporada, então reserve com antecedência.",
+      "De julho a novembro para ver baleias, com dias mais secos e temperatura amena. De dezembro a março para mar mais calmo e quente, ideal para mergulho e para Abrolhos. Por ser alta temporada, reserve passeios e hospedagem com antecedência.",
   },
   {
     pergunta: "Onde ficar",
@@ -123,11 +123,21 @@ export const PRATICO: ItemPratico[] = [
   {
     pergunta: "Quanto tempo ficar",
     resposta:
-      "Três dias cobrem o centro, as falésias e o Tororão. Cinco a sete dias permitem incluir Cumuruxatiba, Corumbau e uma saída embarcada sem correria — as distâncias em estrada de terra consomem mais tempo do que o mapa sugere.",
+      "Três dias cobrem o centro, as falésias e o Tororão. Cinco a sete dias permitem incluir Cumuruxatiba, Corumbau e uma saída embarcada sem pressa, já que as distâncias em estrada de terra exigem mais tempo do que o mapa sugere.",
   },
   {
     pergunta: "A maré importa mesmo?",
     resposta:
       "Muito. O banco de areia de Corumbau, a caminhada sob as falésias e as piscinas naturais só existem na maré baixa. Vale montar o roteiro do dia em torno da tábua de marés, e não do relógio.",
+  },
+  {
+    pergunta: "Como cadastrar pousadas, passeios e serviços no guia?",
+    resposta:
+      "Pousadas, restaurantes e operadores de passeios náuticos em Prado e Cumuruxatiba podem cadastrar sua disponibilidade diretamente na rede JobPago (jobpago.com.br) para receber consultas de visitantes sem cobrança de comissões de intermediação.",
+  },
+  {
+    pergunta: "Como consultar terrenos e imóveis à venda na região?",
+    resposta:
+      "Para quem deseja adquirir lotes de praia, áreas nas falésias ou residências de veraneio em Prado e Cumuruxatiba, consulte a curadoria do corretor Allan Cândido (CRECI-RJ 110.568) em allancandido.com com análise documental completa.",
   },
 ];

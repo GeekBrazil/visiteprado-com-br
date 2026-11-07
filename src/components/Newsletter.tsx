@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { validarSintaxeEmail } from "@/lib/validacaoEmail";
 
 type Estado = "parado" | "enviando" | "ok" | "erro";
 
@@ -18,12 +19,31 @@ const ENDPOINT = "https://allancandido.com/api/newsletter/subscribe";
  */
 export default function Newsletter({ id = "email" }: { id?: string }) {
   const [email, setEmail] = useState("");
+  const [sugestao, setSugestao] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
   const [estado, setEstado] = useState<Estado>("parado");
   const [mensagem, setMensagem] = useState("");
 
+  function aoMudarEmail(val: string) {
+    setEmail(val);
+    setSugestao(null);
+    if (estado === "erro") setEstado("parado");
+  }
+
   async function enviar(e: React.FormEvent) {
     e.preventDefault();
+    setSugestao(null);
+
+    const checagem = validarSintaxeEmail(email, "pt");
+    if (!checagem.valido) {
+      setEstado("erro");
+      setMensagem(checagem.erro || "E-mail inválido.");
+      if (checagem.sugestao) {
+        setSugestao(checagem.sugestao);
+      }
+      return;
+    }
+
     setEstado("enviando");
     setMensagem("");
 
@@ -31,7 +51,7 @@ export default function Newsletter({ id = "email" }: { id?: string }) {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, consent, origem: "visiteprado" }),
+        body: JSON.stringify({ email: checagem.emailLimpo, consent, origem: "visiteprado" }),
       });
       const dados = await res.json().catch(() => ({}));
 
@@ -72,7 +92,7 @@ export default function Newsletter({ id = "email" }: { id?: string }) {
           type="email"
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => aoMudarEmail(e.target.value)}
           placeholder="seu@email.com"
           autoComplete="email"
           className="w-full rounded-[4px] border border-areia-3 bg-areia px-4 py-3.5 text-tinta transition-colors placeholder:text-tinta-3/60 focus:border-mar focus:outline-none"
@@ -85,6 +105,24 @@ export default function Newsletter({ id = "email" }: { id?: string }) {
           {estado === "enviando" ? "Enviando…" : "Quero receber"}
         </button>
       </div>
+
+      {sugestao && (
+        <div className="mt-2.5 flex items-center gap-2 text-xs text-amber-800 bg-amber-50 border border-amber-200 px-3 py-2 rounded">
+          <span>Você quis dizer <strong>{sugestao}</strong>?</span>
+          <button
+            type="button"
+            onClick={() => {
+              setEmail(sugestao);
+              setSugestao(null);
+              setEstado("parado");
+              setMensagem("");
+            }}
+            className="underline font-bold text-amber-900 ml-auto hover:text-black"
+          >
+            Usar {sugestao}
+          </button>
+        </div>
+      )}
 
       <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm text-tinta-2">
         <input
