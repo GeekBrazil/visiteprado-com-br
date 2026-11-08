@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import GaleriaVideos from "@/components/GaleriaVideos";
 import Newsletter from "@/components/Newsletter";
 import NumerosOficiais from "@/components/NumerosOficiais";
+import CalculadoraViagemPrado from "@/components/CalculadoraViagemPrado";
 import Clima from "@/components/Clima";
 import { TEM_GALERIA } from "@/data/midia";
 import { DESTINOS, EXPERIENCIAS, PRATICO } from "@/data/prado";
@@ -31,6 +32,7 @@ export default function Home() {
         <Experiencias />
         <CapturaCedo />
         <NumerosOficiais />
+        <CalculadoraViagemPrado />
         <Pratico />
         <Chamada />
       </main>
@@ -58,6 +60,7 @@ function Cabecalho() {
           <ItemNav href="#mapa">Mapa</ItemNav>
           {TEM_GALERIA && <ItemNav href="#videos">Vídeos</ItemNav>}
           <ItemNav href="#clima">Quando ir</ItemNav>
+          <ItemNav href="#calculadora">Quanto custa</ItemNav>
           <ItemNav href="#planeje">Planeje</ItemNav>
         </nav>
 
