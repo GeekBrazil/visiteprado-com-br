@@ -598,4 +598,41 @@ select:focus-visible,
   .livro-camada {
     will-change: auto;
   }
+
+  .progresso-leitura {
+    display: none;
+  }
+}
+
+/* Barra de progresso de leitura via CSS Scroll-Driven Animations */
+.progresso-leitura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  background: linear-gradient(90deg, var(--color-mar), var(--color-falesia));
+  transform-origin: left center;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+@keyframes crescer-leitura-prado {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .progresso-leitura {
+      animation: crescer-leitura-prado linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0% 100%;
+    }
+  }
 }

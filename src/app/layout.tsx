@@ -104,6 +104,7 @@ export default function RootLayout({
       className={`${display.variable} ${corpo.variable} h-full`}
     >
       <body className="min-h-full">
+        <div aria-hidden="true" className="progresso-leitura" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
