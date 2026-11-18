@@ -74,18 +74,11 @@ export default function MapaPrado() {
       // com imagem valida, entao nada aparecia como erro no console.
       // Light Gray combina com o papel quente do site e nao pede chave.
       L.tileLayer(
-        "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; Esri',
-          maxZoom: 16,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 19,
         }
-      ).addTo(mapa);
-
-      // Camada separada só com os rotulos (nomes de praia, rio, municipio).
-      L.tileLayer(
-        "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
-        { attribution: "", maxZoom: 16 }
       ).addTo(mapa);
 
       L.control.zoom({ position: "bottomright" }).addTo(mapa);
