@@ -112,9 +112,9 @@ export default function MapaPrado() {
         const cor = COR[lugar.categoria] ?? "#3d5158";
         const icone = L.divIcon({
           className: "",
-          html: `<span style="display:block;width:14px;height:14px;border-radius:50%;background:${cor};border:2px solid #fbf6ec;box-shadow:0 1px 4px rgba(22,38,43,.45)"></span>`,
-          iconSize: [14, 14],
-          iconAnchor: [7, 7],
+          html: `<span style="position:relative;display:flex;align-items:center;justify-content:center;width:28px;height:28px;"><span style="position:absolute;inset:2px;border-radius:50%;border:2px solid ${cor};opacity:0.55;box-shadow:0 0 10px ${cor}66;"></span><span style="display:block;width:11px;height:11px;border-radius:50%;background:${cor};border:2px solid #fbf6ec;box-shadow:0 0 6px ${cor};"></span></span>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
         });
 
         const partes = [
